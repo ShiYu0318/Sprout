@@ -19,7 +19,7 @@ using namespace std;
 #define Yn(x) cout << (x ? "Yes" : "No") << '\n';
 #define clear_arr(x) memset(x,0,sizeof(x))
 
-// DP
+// DP bottom-up
 // 狀態 dp[i] = 長度為 i 走廊能排列的方法數
 // 轉移 dp[i] = 4 * dp[i-2] - dp[i-4]
 

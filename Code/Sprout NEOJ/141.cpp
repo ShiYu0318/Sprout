@@ -19,7 +19,7 @@ using namespace std;
 #define outputN(x,n) RPT(i,n) cout << x[i] << " \n"[i == n-1];
 #define Yn(x) cout << (x ? "Yes" : "No") << '\n';
 
-// DP
+// DP bottom-up
 // 狀態 dp[i] = 取第 i 個數字時的最大值
 // 轉移 dp[i] = max(dp[i-2], dp[i-3]) + a[i] 不能取前一個
 
