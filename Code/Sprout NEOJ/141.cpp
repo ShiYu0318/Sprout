@@ -26,7 +26,7 @@ using namespace std;
 const int SP = 1e5+5;
 int a[SP], dp[SP], n;
 
-void init()
+void process()
 {
     dp[0] = a[0];
     dp[1] = a[1];
@@ -45,7 +45,7 @@ signed main()
     {
         cin >> n;
         RPT(i,n) cin >> a[i];
-        init();
+        process();
         cout << max(dp[n], dp[n-1]) << '\n';
     }
 }
