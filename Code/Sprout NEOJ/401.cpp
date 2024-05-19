@@ -28,10 +28,18 @@ struct Pt
 };
 
 vector<Pt> v;
+Pt p[4];
+int a,b,c,d;
+bool aa,bb,cc,dd;
 
-int cross(Pt o, Pt a, Pt b)
+bool dot(int a, int b, int c)
 {
-    int t = (a - o) ^ (b - o);
+    return (p[a] - p[c]) * (p[b] - p[c]) <= 0;
+}
+
+int cross(int a, int b, int c)
+{
+    int t = (p[a] - p[c]) ^ (p[b] - p[c]);
     if(t < 0) return -1;
     return (t > 0);
 }
@@ -42,12 +50,13 @@ signed main()
     int n; cin >> n;
     while(n--)
     {
-        Pt p[4];
         RPT(i,4) cin >> p[i].x >> p[i].y;
-        int a = cross(p[0],p[1],p[2]),
-            b = cross(p[0],p[1],p[3]),
-            c = cross(p[2],p[3],p[0]),
-            d = cross(p[2],p[3],p[1]);
-        Yn(a * b <= 0 && c * d <= 0 || a == 0 && b == 0);
+        a = cross(0,1,2); aa = !a && dot(0,1,2);
+        b = cross(0,1,3); bb = !b && dot(0,1,3);
+        c = cross(2,3,0); cc = !c && dot(2,3,0);
+        d = cross(2,3,1); dd = !d && dot(2,3,1);
+        bool ans;
+        ans = (a == 0 && b == 0) ? (aa || bb || cc || dd) : (a * b <= 0 && c * d <= 0);
+        Yn(ans);
     }
 }
