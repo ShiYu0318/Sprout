@@ -21,13 +21,13 @@ using namespace std;
 
 // 拓墣排序 裸題
 
-const int MXN = 2e5+5;
+const int N = 2e5+5;
 
 void solve()
 {
     priority_queue<int,vector<int>,greater<int>> q;
-    vector<int> v[MXN], topo;
-    int deg[MXN] = {0};
+    vector<int> v[N], topo;
+    int deg[N] = {0};
     // 輸入並建立 Edge 順便紀錄入度
     int n,m,a,b; cin >> n >> m;
     while(m--)
@@ -45,10 +45,7 @@ void solve()
         topo.EB(now);
         for(auto i:v[now]) if(--deg[i] == 0) q.emplace(i);
     }
-    if(topo.size() == n)
-    {
-        RPT(i,n) cout << topo[i] << " \n"[i == n-1];
-    }
+    if(topo.size() == n) RPT(i,n) cout << topo[i] << " \n"[i == n-1];
     else cout << "QAQ\n";
 }
 
