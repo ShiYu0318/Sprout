@@ -19,7 +19,7 @@ using namespace std;
 #define outputN(x,n) RPT(i,n) cout << x[i] << " \n"[i == n-1];
 #define Yn(x) cout << (x ? "Yes" : "No") << '\n';
 
-// MST + DSU + 路徑壓縮 + 啟發式合併
+// MST 最小生成樹 + DSU 併查集 + 路徑壓縮 + 啟發式合併
 
 struct Edge{int a,b,w;};
 bool cmp(Edge a, Edge b) {return a.w < b.w;}
@@ -49,8 +49,8 @@ signed main()
     lead.resize(n+1); cnt.resize(n+1,1); iota(all(lead),0);
     vector<Edge> e(m);
     RPT(i,m) cin >> e[i].a >> e[i].b >> e[i].w;
-    sort(all(e), cmp);
+    sort(all(e), cmp);  // 將 Edge 以權重由小到大排序 達到最小生成樹
     for(int i=0; i<m && edge_cnt<n; ++i) join(e[i]);
-    // if(edge_cnt != n-1)
+    // if(edge_cnt != n-1)  // 可檢查是否成立
     cout << ans << endl;
 }
