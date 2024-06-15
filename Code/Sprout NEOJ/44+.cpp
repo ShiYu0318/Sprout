@@ -26,7 +26,7 @@ int BFS()
 {
     while (q.size())
     {
-        auto [x,y,r] = q.front();
+        auto [x,y,r] = q.front(); q.pop();
         RPT (i,4)
         {
             int nx = x + xy[i][0],
@@ -36,8 +36,6 @@ int BFS()
             q.emplace(grid{nx,ny,r+1});
             tb[nx][ny] = '#';
         }
-        q.pop();
-        // output(tb); cout << "\n";
     }
     return -1;
 }

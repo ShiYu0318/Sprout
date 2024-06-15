@@ -38,7 +38,6 @@ int BFS()
             q.emplace(MP(MP(nx,ny),z+1));
             tb[nx][ny] = '#';
         }
-        // output(tb); cout << "\n";
     }
     return -1;
 }
