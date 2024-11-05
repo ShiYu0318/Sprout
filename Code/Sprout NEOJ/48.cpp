@@ -35,7 +35,7 @@ Node * BST(int * a, int * b, int n)
     }
     node -> left = BST(a+1, b, idx);
     node -> right = BST(a+idx+1, b+idx+1, n-idx-1);
-    cout << node -> val << "\n";ㄢㄢ
+    cout << node -> val << "\n";
     return node;
 }
 

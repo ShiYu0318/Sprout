@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/shiyu./Desktop/資訊之芽 Sprout/Code/第二階段認證考",
+      "program": "/Users/shiyu./Desktop/資訊之芽 Sprout/Code/第二階段認證考/build/Debug/outDebug"
+    }
+  ]
+}
